@@ -1,0 +1,95 @@
+﻿<Project>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+
+    <RootNamespace>VSIXProject2</RootNamespace>
+    <AssemblyName>VSIXProject2</AssemblyName>
+
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+    <EnableVSGlobalsVSCT>true</EnableVSGlobalsVSCT>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Icon.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+      <LastGenOutput>source.extension.cs</LastGenOutput>
+      <Generator>VsixManifestGenerator</Generator>
+    </None>
+    <VSCTCompile Include="VSCommandTable.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+      <Generator>VsctGenerator</Generator>
+      <LastGenOutput>VSCommandTable.cs</LastGenOutput>
+    </VSCTCompile>
+    <None Remove="VSCommandTable.vsct" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="source.extension.cs">
+      <DependentUpon>source.extension.vsixmanifest</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="VSCommandTable.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VSCommandTable.vsct</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Community.VisualStudio.Toolkit" Version="16.0.71" ExcludeAssets="runtime">
+      <GeneratePathProperty>true</GeneratePathProperty><!-- Using this so we can tidy up below -->
+    </PackageReference>
+    <PackageReference Include="Community.VisualStudio.Toolkit.VSGlobals.VSCT">
+      <Version>1.0.10</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.10.11" />
+  </ItemGroup>
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+  <!-- Microsoft.VsSDK.targets needs to be after the Sdk.targets so that $(IntermediateOutputPath) is set -->
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+
+  <ItemGroup>
+    <!-- Remove the included AssemblyInfo.cs file from the Community.VisualStudio.Toolkit package then re-add it hidden -->
+    <Compile Remove="$(PkgCommunity_VisualStudio_Toolkit)\build\**\*.cs" />
+
+    <!-- Hide it -->
+    <Compile Include="$(PkgCommunity_VisualStudio_Toolkit)\build\**\*.cs">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+      <Link>%(Filename)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

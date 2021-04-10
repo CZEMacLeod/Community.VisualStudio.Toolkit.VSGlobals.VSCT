@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+  <!--<Include href="VSGlobals.vsct"/>--><!-- This will generate a warning CVSTK001 since the file is marked as an include but then not used -->
+
+  <Commands package="guidPackage">
+    <Groups>
+      <Group guid="CommandSet" id="MyMenuGroup" priority="0x0600">
+        <!--<Parent guid="VSMainMenu" id="Tools"/>-->
+        <Parent guid="VSMainMenu" id="Tools"/>
+      </Group>
+    </Groups>
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="CommandSet" id="MyCommand" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="MyMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="StatusInformation" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>My Command</ButtonText>
+          <LocCanonicalName>.VSIXProject1.MyCommand</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidPackage" value="{5394C4AE-8DEC-4245-96C5-AAD3088E2A6F}" />
+
+    <GuidSymbol name="CommandSet" value="{5394C4AE-8DEC-4245-96C5-AAD3088E2A6F}">
+      <IDSymbol name="MyMenuGroup" value="0x0001" />
+      <IDSymbol name="MyCommand" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.0.4">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageOutputPath>$(SolutionDir)\_Packages</PackageOutputPath>
+    <Version>1.0.10</Version>
+    <DevelopmentDependency>true</DevelopmentDependency>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="VSGlobals.vsct" Pack="True" PackagePath="contentFiles\any\any\%(Filename)%(Extension)">
+      <Generator></Generator>
+    </None>
+    <None Update="Build\*" Pack="True" PackagePath="build\%(Filename)%(Extension)" />
+    <None Update="_._" Pack="True" PackagePath="lib\net472" />
+  </ItemGroup>
+
+</Project>
