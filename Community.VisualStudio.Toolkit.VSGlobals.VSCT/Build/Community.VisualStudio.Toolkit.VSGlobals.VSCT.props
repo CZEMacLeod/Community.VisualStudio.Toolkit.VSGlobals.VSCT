@@ -2,17 +2,4 @@
   <PropertyGroup>
     <VSGlobalsVSCTPath>$([System.IO.Path]::GetFullPath($([System.IO.Path]::Combine($(MSBuildThisFileDirectory),'..\contentFiles\any\any\'))))</VSGlobalsVSCTPath>
   </PropertyGroup>
-
-  <ItemGroup Condition="'$(BuildingInsideVisualStudio)'=='true'">
-    <AvailableItemName Include="VSCTCompile" />
-    <AvailableItemName Include="VSCTInclude" />
-  </ItemGroup>
-
-  <ItemDefinitionGroup>
-    <VSCTInclude>
-      <Generator></Generator>
-      <Visible>true</Visible>
-      <InProject>true</InProject>
-    </VSCTInclude>
-  </ItemDefinitionGroup>
 </Project>
