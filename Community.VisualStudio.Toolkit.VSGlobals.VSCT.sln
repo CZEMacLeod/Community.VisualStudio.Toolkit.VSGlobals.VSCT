@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Packages", "_Packages", "{
 	ProjectSection(SolutionItems) = preProject
 		_Packages\Community.VisualStudio.SDK.BuildTools.VSCTInclude.1.0.8-g245b80cdb9.nupkg = _Packages\Community.VisualStudio.SDK.BuildTools.VSCTInclude.1.0.8-g245b80cdb9.nupkg
 		_Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.14-gc7cde76ee8.nupkg = _Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.14-gc7cde76ee8.nupkg
+		_Packages\Community.VisualStudio.VSCT.16.0.16-g67f6b28ccc.nupkg = _Packages\Community.VisualStudio.VSCT.16.0.16-g67f6b28ccc.nupkg
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.SDK.BuildTools.VSCTInclude", "Community.VisualStudio.SDK.BuildTools.VSCTInclude\Community.VisualStudio.SDK.BuildTools.VSCTInclude.csproj", "{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}"
