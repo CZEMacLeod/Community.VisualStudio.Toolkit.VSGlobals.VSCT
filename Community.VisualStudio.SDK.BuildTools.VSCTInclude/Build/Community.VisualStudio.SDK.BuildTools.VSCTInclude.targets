@@ -19,6 +19,9 @@
     <XmlPeek XmlInputPath="%(VSCTCompile.Identity)" Query="ct:CommandTable/ct:Include/@href" Namespaces="&lt;Namespace Prefix='ct' Uri='http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable' /&gt;">
       <Output TaskParameter="Result" ItemName="_Temporary"></Output>
     </XmlPeek>
+    <XmlPeek XmlInputPath="%(VSCTInclude.Identity)" Query="ct:CommandTable/ct:Include/@href" Namespaces="&lt;Namespace Prefix='ct' Uri='http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable' /&gt;">
+      <Output TaskParameter="Result" ItemName="_Temporary"></Output>
+    </XmlPeek>
     <ItemGroup>
       <_Temporary2 Remove="@(_Temporary)" />
     </ItemGroup>
