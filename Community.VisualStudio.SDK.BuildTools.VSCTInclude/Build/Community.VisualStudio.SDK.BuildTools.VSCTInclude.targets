@@ -1,5 +1,13 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
 
+  <ItemGroup Condition="'$(EnableDefaultVSCTIncludeItems)'!='false'">
+    <!-- Migrate any None items (e.g. linked items from outside the project) -->
+    <VSCTInclude Include="@(None->HasMetadata('Extension')->WithMetadataValue('Extension','.vsct'))" Exclude="$(VSCTIncludeExclude);@(VSCTCompile)" />
+    <None Remove="@(VSCTInclude)" />
+    <!-- Scoop up any *.vsct items from the project that are not excluded -->
+    <VSCTInclude Include="**/*.vsct" Exclude="$(VSCTIncludeExclude);@(VSCTCompile);@(VSCTInclude)" />    
+  </ItemGroup>
+
   <Target Name="CheckVSCTIncludes" BeforeTargets="VSCTCompile" Condition="'@(VSCTCompile)'!=''">
     <ItemGroup>
       <_Temporary Remove="@(_Temporary)" />

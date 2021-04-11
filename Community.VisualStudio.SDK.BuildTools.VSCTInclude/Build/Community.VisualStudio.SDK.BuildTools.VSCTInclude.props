@@ -19,17 +19,4 @@
     </VSCTInclude>
   </ItemDefinitionGroup>
 
-
-  <ItemGroup Condition="'$(EnableDefaultVSCTIncludeItems)'!=''">
-    <!-- Convert property to items -->
-    <_VSCTIncludeExclude Include="$(VSCTIncludeExclude)" Condition="'$(VSCTIncludeExclude)'!=''"/>
-    <!-- Do not include VSCTCompile items -->
-    <_VSCTIncludeExclude Include="@(VSCTCompile)" />
-    <!-- Migrate any None items (e.g. linked items from outside the project) -->
-    <VSCTInclude Include="@(None->HasMetadata('Extension')->WithMetadataValue('Extension','.vsct'))" Exclude="@(_VSCTIncludeExclude)" />
-    <None Remove="@(VSCTInclude)" />
-    <_VSCTIncludeExclude Include="@(VSCTInclude)" />
-    <!-- Scoop up any *.vsct items from the project that are not excluded -->
-    <VSCTInclude Include="**/*.vsct" Exclude="@(_VSCTIncludeExclude)" />
-  </ItemGroup>
 </Project>
