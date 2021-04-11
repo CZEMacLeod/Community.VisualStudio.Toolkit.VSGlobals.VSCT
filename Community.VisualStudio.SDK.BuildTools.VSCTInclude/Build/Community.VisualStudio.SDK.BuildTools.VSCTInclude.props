@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <EnableDefaultVSCTIncludeItems Condition="'$(EnableDefaultVSCTIncludeItems)'==''">true</EnableDefaultVSCTIncludeItems>
-    <VSCTIncludeExclude Condition="'$(VSCTIncludeExclude)'==''">true</VSCTIncludeExclude>
+    <VSCTIncludeExclude Condition="'$(VSCTIncludeExclude)'==''"></VSCTIncludeExclude><!-- Initialize the property -->
   </PropertyGroup>
 
   <ItemDefinitionGroup>
