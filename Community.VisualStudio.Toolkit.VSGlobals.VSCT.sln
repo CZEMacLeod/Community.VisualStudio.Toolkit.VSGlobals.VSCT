@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Packages", "_Packages", "{
 		_Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.10.nupkg = _Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.10.nupkg
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.VisualStudio.SDK.BuildTools.VSCTInclude", "Community.VisualStudio.SDK.BuildTools.VSCTInclude\Community.VisualStudio.SDK.BuildTools.VSCTInclude.csproj", "{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{8DCD8365-D5DE-413C-9D64-48D37FAD1B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DCD8365-D5DE-413C-9D64-48D37FAD1B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DCD8365-D5DE-413C-9D64-48D37FAD1B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

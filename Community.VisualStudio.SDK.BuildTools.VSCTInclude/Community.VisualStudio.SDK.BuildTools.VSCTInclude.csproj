@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.Build.NoTargets/3.0.4">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageOutputPath>$(SolutionDir)\_Packages</PackageOutputPath>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <Copyright>2021 Cloud3D Ltd.</Copyright>
+    <Company>Cloud3D Ltd.</Company>
+    <Description>A development time MSBuild extension to [Microsoft.VSSDK.BuildTools](https://www.nuget.org/packages/Microsoft.VSSDK.BuildTools/)
+Adds a new item type `VSCTInclude` which ensures that the items path is added to `VSCTIncludePath` and gives a warning if you do _not_ include it in any `VSCTCompile` file.
+    </Description>
+    <PackageTags>MSBuild;VSSDK;BuildTools;VSCT</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Authors>Cynthia Z E MacLeod</Authors>
+    <!-- Not sure if I can use this! -->
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.194">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Build\*" Pack="True" PackagePath="build\%(Filename)%(Extension)" />
+    <None Update="Build\Community.VisualStudio.SDK.BuildTools.VSCTInclude.props">
+      <PackagePath>build\%(Filename)%(Extension)</PackagePath>
+    </None>
+    <None Update="Build\Community.VisualStudio.SDK.BuildTools.VSCTInclude.targets">
+      <PackagePath>build\%(Filename)%(Extension)</PackagePath>
+    </None>
+    <None Update="_._" Pack="True" PackagePath="lib\net472" />
+    <None Update="LICENSE.txt" Pack="True" PackagePath="" />
+    <None Update="icon.png" Pack="True" PackagePath="" />
+  </ItemGroup>
+
+</Project>
