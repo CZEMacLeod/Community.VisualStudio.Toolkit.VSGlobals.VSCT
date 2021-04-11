@@ -1,0 +1,4 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="Community.VisualStudio.Toolkit.VSGlobals.VSCT.targets" />
+  <Import Project="Community.VisualStudio.SDK.BuildTools.VSCTInclude.targets" />
+</Project>
