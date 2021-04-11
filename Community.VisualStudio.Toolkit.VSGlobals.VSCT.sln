@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Tool
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA535B9B-4A8A-4FBE-B5D6-3BC973BDF495}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		icon.png = icon.png
 		LICENSE.txt = LICENSE.txt
 		nuget.config = nuget.config
@@ -18,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSIXProject2", "VSIXProject
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Packages", "_Packages", "{6496D29B-C7E6-4A47-9A02-E5B5096E8131}"
 	ProjectSection(SolutionItems) = preProject
-		_Packages\Community.VisualStudio.SDK.BuildTools.VSCTInclude.1.0.1-g4059c6a975.nupkg = _Packages\Community.VisualStudio.SDK.BuildTools.VSCTInclude.1.0.1-g4059c6a975.nupkg
-		_Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.10.nupkg = _Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.10.nupkg
+		_Packages\Community.VisualStudio.SDK.BuildTools.VSCTInclude.1.0.8-g245b80cdb9.nupkg = _Packages\Community.VisualStudio.SDK.BuildTools.VSCTInclude.1.0.8-g245b80cdb9.nupkg
+		_Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.14-gc7cde76ee8.nupkg = _Packages\Community.VisualStudio.Toolkit.VSGlobals.VSCT.1.0.14-gc7cde76ee8.nupkg
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.VisualStudio.SDK.BuildTools.VSCTInclude", "Community.VisualStudio.SDK.BuildTools.VSCTInclude\Community.VisualStudio.SDK.BuildTools.VSCTInclude.csproj", "{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.SDK.BuildTools.VSCTInclude", "Community.VisualStudio.SDK.BuildTools.VSCTInclude\Community.VisualStudio.SDK.BuildTools.VSCTInclude.csproj", "{E2E8F6C3-152E-42AC-9B43-D6A9EF7CCB00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

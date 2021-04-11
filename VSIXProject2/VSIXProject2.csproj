@@ -19,8 +19,20 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
     <EnableVSGlobalsVSCT>true</EnableVSGlobalsVSCT>
+    <EnableDefaultVSCTIncludeItems>true</EnableDefaultVSCTIncludeItems>
 
   </PropertyGroup>
+
+  <ItemGroup>
+    <AvailableItemName Include="VSCTCompile" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <VSCTCompile>
+      <Generator>VsctGenerator</Generator>
+      <Visible>true</Visible>
+      <InProject>true</InProject>
+    </VSCTCompile>
+  </ItemDefinitionGroup>
 
   <ItemGroup>
     <None Remove="Resources\Icon.png" />
@@ -44,7 +56,6 @@
       <Generator>VsctGenerator</Generator>
       <LastGenOutput>VSCommandTable.cs</LastGenOutput>
     </VSCTCompile>
-    <None Remove="VSCommandTable.vsct" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,11 +77,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Community.VisualStudio.SDK.BuildTools.VSCTInclude" Version="1.0.8-g245b80cdb9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Community.VisualStudio.Toolkit" Version="16.0.71" ExcludeAssets="runtime">
       <GeneratePathProperty>true</GeneratePathProperty><!-- Using this so we can tidy up below -->
     </PackageReference>
     <PackageReference Include="Community.VisualStudio.Toolkit.VSGlobals.VSCT">
-      <Version>1.0.10</Version>
+      <Version>1.0.14-gc7cde76ee8</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
