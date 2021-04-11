@@ -1,19 +1,4 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
-  <PropertyGroup>
-    <EnableDefaultVSCTIncludeItems Condition="'$(EnableDefaultVSCTIncludeItems)'==''">true</EnableDefaultVSCTIncludeItems>
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(EnableDefaultVSCTIncludeItems)'!=''">
-    <!-- Do not include compile items -->
-    <VSCTIncludeExclude Include="@(VSCTCompile)" />
-    <!-- Migrate any None items (e.g. linked items from outside the project -->
-    <VSCTInclude Include="@None" Exclude="@(VSCTIncludeExclude)" Condition="'%(Extension)'=='.vsct'" />
-    <None Remove="@(VSCTInclude)" />
-    <!-- Scoop up any *.vsct items from the project that are not excluded -->
-    <_VSCTIncludeExclude Include="@(VSCTIncludeExclude)" />
-    <_VSCTIncludeExclude Include="@(VSCTInclude)" />
-    <VSCTInclude Include="**/*.vsct" Exclude="@(_VSCTIncludeExclude)" />
-  </ItemGroup>
 
   <Target Name="CheckVSCTIncludes" BeforeTargets="VSCTCompile" Condition="'@(VSCTCompile)'!=''">
     <ItemGroup>
