@@ -9,11 +9,13 @@
     <Description>A development time MSBuild extension to [Microsoft.VSSDK.BuildTools](https://www.nuget.org/packages/Microsoft.VSSDK.BuildTools/)
 Adds a new item type `VSCTInclude` which ensures that the items path is added to `VSCTIncludePath` and gives a warning if you do _not_ include it in any `VSCTCompile` file.
     </Description>
-    <PackageTags>MSBuild;VSSDK;BuildTools;VSCT</PackageTags>
+    <PackageTags>MSBuild;VSSDK;BuildTools;VSCT;Community</PackageTags>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Authors>Cynthia Z E MacLeod</Authors>
-    <!-- Not sure if I can use this! -->
     <PackageIcon>icon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/CZEMacLeod/Community.VisualStudio.Toolkit.VSGlobals.VSCT</RepositoryUrl>
+    <RepositoryBranch>main</RepositoryBranch>
   </PropertyGroup>
 
   <ItemGroup>

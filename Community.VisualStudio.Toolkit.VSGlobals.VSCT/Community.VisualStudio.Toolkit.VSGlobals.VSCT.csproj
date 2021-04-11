@@ -3,9 +3,32 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageOutputPath>$(SolutionDir)\_Packages</PackageOutputPath>
-    <Version>1.0.10</Version>
     <DevelopmentDependency>true</DevelopmentDependency>
+    <Copyright>2021 Cloud3D Ltd.</Copyright>
+    <Company>Cloud3D Ltd.</Company>
+    <Description>
+      A development time MSBuild extension to [Microsoft.VSSDK.BuildTools](https://www.nuget.org/packages/Microsoft.VSSDK.BuildTools/)
+      Adds a new item type `VSCTInclude` which ensures that the items path is added to `VSCTIncludePath` and gives a warning if you do _not_ include it in any `VSCTCompile` file.
+    </Description>
+    <PackageTags>MSBuild;VSSDK;VSCT;Community;VSGlobals</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Authors>Cynthia Z E MacLeod</Authors>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/CZEMacLeod/Community.VisualStudio.Toolkit.VSGlobals.VSCT</RepositoryUrl>
+    <RepositoryBranch>main</RepositoryBranch>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.194">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="VSGlobals.vsct" Pack="True" PackagePath="contentFiles\any\any\%(Filename)%(Extension)">
