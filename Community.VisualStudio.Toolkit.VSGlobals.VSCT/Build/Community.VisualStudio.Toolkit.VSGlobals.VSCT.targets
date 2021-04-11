@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="$(VSGlobalsVSCTPath)VSGlobals.vsct" Condition="'$(EnableVSGlobalsVSCT)'!='false'" />
     <None Include="$(VSGlobalsVSCTPath)VSGlobals.vsct" Condition="'$(EnableVSGlobalsVSCT)'!='false' AND '@(VSCTCompile)'!=''">
       <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
       <Generator></Generator>

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.Build.NoTargets/3.0.4">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <PackageOutputPath>$(SolutionDir)\_Packages</PackageOutputPath>
     <DevelopmentDependency>true</DevelopmentDependency>
     <Copyright>2021 Cloud3D Ltd.</Copyright>
@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="VSGlobals.vsct" Pack="True" PackagePath="contentFiles\any\any\%(Filename)%(Extension)">
+    <None Update="VSGlobals.vsct" Pack="True" PackagePath="vsct\%(Filename)%(Extension)">
       <Generator></Generator>
     </None>
     <None Update="Build\*" Pack="True" PackagePath="build\%(Filename)%(Extension)" />

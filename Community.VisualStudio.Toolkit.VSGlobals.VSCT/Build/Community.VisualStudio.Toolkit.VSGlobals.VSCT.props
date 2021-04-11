@@ -1,5 +1,5 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
-    <VSGlobalsVSCTPath>$([System.IO.Path]::GetFullPath($([System.IO.Path]::Combine($(MSBuildThisFileDirectory),'..\contentFiles\any\any\'))))</VSGlobalsVSCTPath>
+    <VSGlobalsVSCTPath>$([System.IO.Path]::GetFullPath($([System.IO.Path]::Combine($(MSBuildThisFileDirectory),'..\vsct\'))))</VSGlobalsVSCTPath>
   </PropertyGroup>
 </Project>
