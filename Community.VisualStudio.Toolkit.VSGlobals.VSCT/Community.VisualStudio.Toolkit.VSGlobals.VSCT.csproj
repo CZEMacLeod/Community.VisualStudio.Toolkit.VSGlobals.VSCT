@@ -13,6 +13,8 @@
     </None>
     <None Update="Build\*" Pack="True" PackagePath="build\%(Filename)%(Extension)" />
     <None Update="_._" Pack="True" PackagePath="lib\net472" />
+    <None Include="..\icon.png" Pack="True" PackagePath="" />
+    <None Include="..\LICENSE.txt" Pack="True" PackagePath="" Link="%(FileName)%(Extension)" />
   </ItemGroup>
 
 </Project>

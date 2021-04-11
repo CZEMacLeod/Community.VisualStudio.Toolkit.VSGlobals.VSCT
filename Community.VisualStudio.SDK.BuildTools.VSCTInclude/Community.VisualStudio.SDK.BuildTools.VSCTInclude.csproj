@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.Build.NoTargets/3.0.4">
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.0.4">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -36,8 +36,8 @@ Adds a new item type `VSCTInclude` which ensures that the items path is added to
       <PackagePath>build\%(Filename)%(Extension)</PackagePath>
     </None>
     <None Update="_._" Pack="True" PackagePath="lib\net472" />
-    <None Update="LICENSE.txt" Pack="True" PackagePath="" />
-    <None Update="icon.png" Pack="True" PackagePath="" />
+    <None Include="..\icon.png" Pack="True" PackagePath="" />
+    <None Include="..\LICENSE.txt" Pack="True" PackagePath="" Link="%(FileName)%(Extension)" />
   </ItemGroup>
 
 </Project>
