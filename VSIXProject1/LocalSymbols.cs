@@ -12,13 +12,18 @@ namespace VSIXProject1
     /// </summary>
     internal sealed partial class PackageGuids
     {
+        public const string guidPackageString = "4393bf0f-98ac-4880-9eeb-780284bd504e";
+        public static Guid guidPackage = new Guid(guidPackageString);
 
+        public const string CommandSetString = "8f293592-ad99-4bd8-8477-bdcfc3681bf0";
+        public static Guid CommandSet = new Guid(CommandSetString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
     /// </summary>
     internal sealed partial class PackageIds
     {
-
+        public const int MyMenuGroup = 0x0001;
+        public const int MyCommand = 0x0100;
     }
 }

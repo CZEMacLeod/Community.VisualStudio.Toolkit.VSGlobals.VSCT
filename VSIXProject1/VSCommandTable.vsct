@@ -5,6 +5,7 @@
   <Extern href="vsshlids.h"/>
   <Include href="KnownImageIds.vsct"/>
   <Include href="VSGlobals.vsct"/>
+  <Include href="LocalSymbols.vsct"/>
 
   <Commands package="guidPackage">
     <Groups>
@@ -28,12 +29,5 @@
     </Buttons>
   </Commands>
 
-  <Symbols>
-    <GuidSymbol name="guidPackage" value="{4393bf0f-98ac-4880-9eeb-780284bd504e}" />
 
-    <GuidSymbol name="CommandSet" value="{8f293592-ad99-4bd8-8477-bdcfc3681bf0}">
-      <IDSymbol name="MyMenuGroup" value="0x0001" />
-      <IDSymbol name="MyCommand" value="0x0100" />
-    </GuidSymbol>
-  </Symbols>
 </CommandTable>
