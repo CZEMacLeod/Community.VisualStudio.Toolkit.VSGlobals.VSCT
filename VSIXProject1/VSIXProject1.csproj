@@ -82,14 +82,9 @@
     <Reference Include="System.Design" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Community.VisualStudio.SDK.BuildTools.VSCTInclude">
-      <Version>1.0.8-g245b80cdb9</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Community.VisualStudio.Toolkit" Version="16.0.71" ExcludeAssets="runtime" />
-    <PackageReference Include="Community.VisualStudio.Toolkit.VSGlobals.VSCT" GeneratePathProperty="True">
-      <Version>1.0.14-gc7cde76ee8</Version>
+    <PackageReference Include="Community.VisualStudio.VSCT">
+      <Version>16.0.16-g67f6b28ccc</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

@@ -77,20 +77,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Community.VisualStudio.SDK.BuildTools.VSCTInclude" Version="1.0.8-g245b80cdb9">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Community.VisualStudio.Toolkit" Version="16.0.71" ExcludeAssets="runtime">
       <GeneratePathProperty>true</GeneratePathProperty><!-- Using this so we can tidy up below -->
     </PackageReference>
-    <PackageReference Include="Community.VisualStudio.Toolkit.VSGlobals.VSCT">
-      <Version>1.0.14-gc7cde76ee8</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="Community.VisualStudio.VSCT" Version="16.0.16-g67f6b28ccc">
       <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.10.11" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <VSGlobalsVSCTPath>$(MSBuildProjectDirectory)\Test\</VSGlobalsVSCTPath>
+  </PropertyGroup>
+
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <!-- Microsoft.VsSDK.targets needs to be after the Sdk.targets so that $(IntermediateOutputPath) is set -->
@@ -106,5 +106,14 @@
       <InProject>false</InProject>
       <Link>%(Filename)%(Extension)</Link>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <VSCTInclude Update="Test\VSGlobals-V15.vsct">
+      <Generator></Generator>
+    </VSCTInclude>
+    <VSCTInclude Update="Test\VSGlobals-V16.vsct">
+      <Generator></Generator>
+    </VSCTInclude>
   </ItemGroup>
 </Project>

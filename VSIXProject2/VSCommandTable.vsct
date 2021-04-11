@@ -9,7 +9,7 @@
   <Commands package="guidPackage">
     <Groups>
       <Group guid="CommandSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="VSMainMenu" id="Tools"/>
+        <Parent guid="VSMainMenu" id="Tools.Other2Group"/>
       </Group>
     </Groups>
 

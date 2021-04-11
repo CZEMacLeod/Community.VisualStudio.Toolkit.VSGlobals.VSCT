@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+
+  <Symbols>
+    <GuidSymbol name="VSMainMenu" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
+      <IDSymbol name="Tools.Other2Group" value="0x015B" />
+    </GuidSymbol>  
+  </Symbols>
+</CommandTable>
